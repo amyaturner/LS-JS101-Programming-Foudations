@@ -71,6 +71,8 @@ do {
 
   } while (numberInvalid(num1));
 
+  num1 = Number(num1);
+
   do {
     prompt('Please enter your second number:');
     num2 = rlSync.question();
@@ -80,6 +82,8 @@ do {
     }
 
   } while (numberInvalid(num2));
+
+  num2 = Number(num2);
 
   let operation;
   do {
