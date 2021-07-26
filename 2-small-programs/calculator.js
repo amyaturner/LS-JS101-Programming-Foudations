@@ -11,8 +11,8 @@ function prompt(message) {
   console.log(`=> ${message}`);
 }
 
-function numberValid(num) {
-  return !Number.isNaN(num);
+function numberInvalid(num) {
+  return num.trimStart() === '' || Number.isNaN(Number(num));
 }
 
 function askForOperation() {
@@ -20,7 +20,7 @@ function askForOperation() {
 }
 
 function operationValid(operation) {
-  return operation === 'a' || operation === 's' || operation === 'm' || operation === 'd';
+  return (['a', 's', 'm', 'd'].includes(operation));
 }
 
 function findResult(num1, num2, operation) {
@@ -65,21 +65,21 @@ do {
     prompt('Please enter your first number:');
     num1 = rlSync.question();
 
-    if (!numberValid(num1)) {
+    if (numberInvalid(num1)) {
       prompt('That is not a number.');
     }
 
-  } while (!numberValid(num1));
+  } while (numberInvalid(num1));
 
   do {
     prompt('Please enter your second number:');
     num2 = rlSync.question();
 
-    if (!numberValid(num2)) {
+    if (numberInvalid(num2)) {
       prompt('That is not a number.');
     }
 
-  } while (!numberValid(num2));
+  } while (numberInvalid(num2));
 
   let operation;
   do {
