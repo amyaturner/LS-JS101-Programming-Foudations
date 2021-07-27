@@ -105,4 +105,4 @@ do {
 
   } while (!startOverValid(startOver));
 
-} while (startOverTrue(startOver)); // If startOverTrue(startOver) === true, end main loop
+} while (startOverTrue(startOver)); // If startOverTrue(startOver) === false, end main loop
