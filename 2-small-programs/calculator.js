@@ -16,10 +16,6 @@ function numberInvalid(num) {
   return num.trimStart() === '' || Number.isNaN(Number(num));
 }
 
-function askForOperation() {
-  return prompt(MESSAGES.askForOperation);
-}
-
 function operationValid(operation) {
   return (['a', 's', 'm', 'd'].includes(operation));
 }
@@ -88,7 +84,7 @@ do {
 
   let operation;
   do {
-    askForOperation();
+    prompt(MESSAGES.askForOperation);
     operation = rlSync.question().toLowerCase();
 
     if (!operationValid(operation)) {
@@ -100,7 +96,7 @@ do {
   prompt(MESSAGES.result + findResult(num1, num2, operation) + '\n');
 
   do {
-    prompt(MESSAGES.startAgain);
+    prompt(MESSAGES.startOver);
     startOver = rlSync.question().toLowerCase();
 
     if (!startOverValid(startOver)) {
