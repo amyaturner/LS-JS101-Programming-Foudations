@@ -1,10 +1,13 @@
 {
   "askForOperation" : "Please enter a letter for the operation you would like to perform on your two numbers:\n 'a' for 'addition',\n 's' for 'subtraction',\n 'm' for 'multiplicaton',\n 'd' for 'division'",
-  "welcome" : "Welcome to Calculator!",
-  "askForNum" : "Please enter a number:",
-  "invalidNum" : "That is not a number.",
-  "invalidOperation" : "Sorry. Not able to perform that calculation.",
-  "result" : "Your result is ",
+  "welcome" : "Welcome to the Mortgage Calculator!",
+  "askForLoanAmount" : "Please enter loan amount, without commas (I.e. 200000):",
+  "askForApr" : "Please enter APR as a a number: 2.65, rather than as a percentrage calculation: .0265",
+  "askForLoanDuration" : "Please enter loan duration in years. Ex: 5",
+  "invalidNum" : "That is not a number or not a valid entry. Please enter a number greater than 0 with no commas (10000).",
+  "invalidApr" : "That is not a valid entry for APR. Please enter APR as a a number: 3.55, not as a percentage calculation: .0355",
+  "result" : "Your monthly payment is $",
   "startOver" : "Would you like to start again? Enter 'y' for Yes, 'n' or 'q' to quit.",
-  "invalidStartOver" : "Oops. Please enter a valid input."
+  "invalidStartOver" : "Oops. Please enter a valid input.",
+  "goodbye" : "Thank you for calculating! Goodbye."
 }

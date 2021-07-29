@@ -9,7 +9,7 @@ const MESSAGES = require('./calculator_messages.json');
 let rlSync = require('readline-sync');
 
 function prompt(message) {
-  console.log(`=> ${message}`);
+  return console.log(`=> ${message}`);
 }
 
 function numberInvalid(num) {
