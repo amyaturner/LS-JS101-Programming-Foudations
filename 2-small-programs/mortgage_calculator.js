@@ -86,8 +86,8 @@ function calculateMonthlyInterestRate(apr) {
   return (apr / 100) / 12;
 }
 
-function calculateLoanDurationInMonths(loanDuration) {
-  return loanDuration * 12;
+function calculateLoanDurationInMonths(loanDurationYears) {
+  return loanDurationYears * 12;
 }
 
 function askIfStartOver() {
