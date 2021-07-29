@@ -1,5 +1,4 @@
 {
-  "askForOperation" : "Please enter a letter for the operation you would like to perform on your two numbers:\n 'a' for 'addition',\n 's' for 'subtraction',\n 'm' for 'multiplicaton',\n 'd' for 'division'",
   "welcome" : "Welcome to the Mortgage Calculator!",
   "askForLoanAmount" : "Please enter loan amount, without commas (I.e. 200000):",
   "askForApr" : "Please enter APR as a a number: 2.65, rather than as a percentrage calculation: .0265",
