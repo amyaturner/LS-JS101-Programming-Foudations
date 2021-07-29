@@ -5,7 +5,7 @@ const VALID_NO = ['n', 'no'];
 let rlSync = require('readline-sync');
 
 function prompt(message) {
-  return console.log(`=> ${message}`);
+  console.log(`=> ${message}`);
 }
 
 function askForLoanAmount() {
