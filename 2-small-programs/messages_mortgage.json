@@ -6,7 +6,7 @@
   "invalidNum" : "That is not a number or not a valid entry. Please enter a number greater than 0 with no commas (10000).",
   "invalidApr" : "That is not a valid entry for APR. Please enter APR as a a number: 3.55, not as a percentage calculation: .0355",
   "result" : "Your monthly payment is $",
-  "startOver" : "Would you like to start again? Enter 'y' for Yes, 'n' or 'q' to quit.",
+  "startOver" : "Would you like to start again? Enter 'y' for Yes, 'n' to quit.",
   "invalidStartOver" : "Oops. Please enter a valid input.",
   "goodbye" : "Thank you for calculating! Goodbye."
 }

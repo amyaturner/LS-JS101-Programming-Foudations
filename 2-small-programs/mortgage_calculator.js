@@ -1,4 +1,6 @@
 const MESSAGES = require('./messages_mortgage.json');
+const VALID_YES = ['y', 'yes'];
+const VALID_NO = ['n', 'no'];
 
 let rlSync = require('readline-sync');
 
@@ -67,15 +69,17 @@ function aprInvalid(num) {
           Number.isNaN(Number(num));
 }
 
-function findResult(loanAmount, apr, loanDurationYears) {
+function calculateMonthlyPayment(loanAmount, apr, loanDurationYears) {
   let durationInMonths = calculateLoanDurationInMonths(loanDurationYears);
+  let monthlyPayment;
 
   if (apr === 0) {
-    return (loanAmount / durationInMonths).toFixed(2);
+    monthlyPayment = (loanAmount / durationInMonths).toFixed(2);
+    return monthlyPayment;
   }
 
   let monthlyRate = calculateMonthlyInterestRate(apr);
-  let monthlyPayment = loanAmount *
+  monthlyPayment = loanAmount *
                        (monthlyRate /
                        (1 - Math.pow((1 + monthlyRate), (-durationInMonths))));
 
@@ -97,24 +101,21 @@ function askIfStartOver() {
     prompt(MESSAGES.startOver);
     startOver = rlSync.question().toLowerCase();
 
-    if (!startOverValid(startOver)) {
+    if (!startOverResponseValid(startOver)) {
       prompt(MESSAGES.invalidStartOver);
     }
 
-  } while (!startOverValid(startOver));
+  } while (!startOverResponseValid(startOver));
 
   return startOver;
 }
 
-function startOverValid(startOver) {
-  const VALID_YES = ['y', 'yes'];
-  const VALID_NO = ['n', 'no'];
-
+function startOverResponseValid(startOver) {
   return VALID_YES.includes(startOver) || VALID_NO.includes(startOver);
 }
 
 function startOverTrue(startOver) {
-  return startOver === 'y' || startOver === 'yes';
+  return VALID_YES.includes(startOver);
 }
 
 let loanAmount;
@@ -130,7 +131,7 @@ do {
   apr = askForApr();
   loanDurationYears = askForLoanDuration();
 
-  prompt(MESSAGES.result + findResult(loanAmount, apr, loanDurationYears) + '\n');
+  prompt(MESSAGES.result + calculateMonthlyPayment(loanAmount, apr, loanDurationYears) + '\n');
 
   startOver = askIfStartOver();
 
