@@ -1,14 +1,13 @@
 {
-  "welcome" : "Welcome to Rock, Paper, Scissors, Spock, Lizard! Each round is best out five.\n",
+  "welcome" : "Welcome to Rock, Paper, Scissors, Spock, Lizard!\n=> Each round goes until someone's score reaches 5.\n",
   "askForChoice" : "Choose one: Enter 'r' for rock, 'p' for paper, 'sc' for scissors, 'sp, for spock, or 'l' for lizard.",
-  "notValidChoice" : "Oops. That's not a valid choice.",
+  "invalidResponse" : "Oops. That's not a valid choice.\n",
   "askToContinueRound" : "Continue this round (y/n)?",
-  "youWin" : "You win!\n",
-  "computerWins" : "Computer wins!\n",
-  "tie" : "It's a tie!\n",
-  "userIsGrandWinner" : "You are the Grand Winner of this round!\n",
-  "computerIsGrandWinner" : "The Computer is the Grand Winner of this round!\n",
-  "askPlayAnotherRound" : "Do you want to play another round (y/n)?",
-  "invalidContinue" : "Oops. Please enter 'y' or 'n'.",
+  "youWin" : "YOU WIN!\n",
+  "computerWins" : "COMPUTER WINS!\n",
+  "tie" : "IT'S A TIE!\n",
+  "userIsGrandWinner" : "You are the GRAND WINNER!\n",
+  "computerIsGrandWinner" : "The Computer is the GRAND WINNER!\n",
+  "askToPlayAgain" : "Do you want to play again (y/n)?",
   "goodbye" : "Thank you for playing! Goodbye.\n"
 }

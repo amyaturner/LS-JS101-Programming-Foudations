@@ -17,23 +17,38 @@ let word;
 function translate(choice) {
   switch (choice) {
     case 'r':
-      word = 'rock';
+      word = "'rock'";
       break;
     case 'p':
-      word = 'paper';
+      word = "'paper'";
       break;
     case 'sc':
-      word = 'scissors';
+      word = "'scissors'";
       break;
     case 'sp':
-      word = 'spock';
+      word = "'spock'";
       break;
     case 'l':
-      word = 'lizard';
+      word = "'lizard'";
       break;
   }
 
   return word;
+}
+
+function askForUserChoice() {
+  let choice;
+
+  do {
+    prompt(MESSAGE.askForChoice);
+    choice = rlsync.question();
+
+    if (!VALID_CHOICES.includes(choice)) {
+      prompt(MESSAGE.invalidResponse);
+    }
+  } while (!VALID_CHOICES.includes(choice));
+
+  return choice;
 }
 
 function computerChooses() {
@@ -94,24 +109,48 @@ function displayGrandWinnerMessage() {
   }
 }
 
+function askToContinueRound() {
+  let answer;
+
+  do {
+    prompt(MESSAGE.askToContinueRound);
+    answer = rlsync.question().toLowerCase();
+
+    if (answer !== 'y' && answer !== 'n') {
+      prompt(MESSAGE.invalidResponse);
+    }
+
+  } while (answer !== 'y' && answer !== 'n');
+
+  return answer;
+}
+
+function askToPlayAgain() {
+  let response;
+
+  do {
+    prompt(MESSAGE.askToPlayAgain);
+    response = rlsync.question().toLowerCase();
+
+    if (response !== 'y' && response !== 'n') {
+      prompt(MESSAGE.invalidResponse);
+    }
+
+  } while (response !== 'y' && response !== 'n');
+
+  return response;
+}
+
 console.clear();
 
 prompt(MESSAGE.welcome);
 
 while (true) {
-
   userScore = 0;
   computerScore = 0;
 
   while (userScore < 5 && computerScore < 5) {
-    prompt(MESSAGE.askForChoice);
-    let choice = rlsync.question();
-
-    while (!VALID_CHOICES.includes(choice)) {
-      prompt(MESSAGE.notValidChoice);
-      choice = rlsync.question();
-    }
-
+    let choice = askForUserChoice();
     let computerChoice = computerChooses();
 
     displayChoices(choice, computerChoice);
@@ -127,34 +166,14 @@ while (true) {
       break;
     }
 
-    let answer;
-    do {
-      prompt(MESSAGE.askToContinueRound);
-      answer = rlsync.question().toLowerCase();
-
-      if (answer !== 'y' && answer !== 'n') {
-        prompt(MESSAGE.invalidContinue);
-      }
-
-    } while (answer !== 'y' && answer !== 'n');
-
-    if (answer !== 'y') break;
+    let continueRound = askToContinueRound();
+    if (continueRound !== 'y') break;
 
     console.clear();
   }
 
-  let response;
-  do {
-    prompt(MESSAGE.askPlayAnotherRound);
-    response = rlsync.question().toLowerCase();
-
-    if (response !== 'y' && response !== 'n') {
-      prompt(MESSAGE.invalidContinue);
-    }
-
-  } while (response !== 'y' && response !== 'n');
-
-  if (response !== 'y') break;
+  let newRound = askToPlayAgain();
+  if (newRound !== 'y') break;
 
   console.clear();
 }
