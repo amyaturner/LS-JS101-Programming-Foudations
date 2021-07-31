@@ -63,11 +63,11 @@ function playerWins(choice, computerChoice) {
 
 function displayWinnerMessage(winner) {
   if (winner === 'user') {
-    console.log(MESSAGE.youWin);
+    prompt(MESSAGE.youWin);
   } else if (winner === 'computer') {
-    console.log(MESSAGE.computerWins);
+    prompt(MESSAGE.computerWins);
   } else {
-    console.log(MESSAGE.tie);
+    prompt(MESSAGE.tie);
   }
 }
 
