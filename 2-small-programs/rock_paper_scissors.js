@@ -55,32 +55,11 @@ while (true) {
     choice = rlsync.question();
   }
 
-  let enterToContinue;
-  do {
-    prompt(MESSAGE.enterToContinue);
-    enterToContinue = rlsync.question().toLowerCase();
-
-    if (enterToContinue !== 'c') {
-      prompt(MESSAGE.invalidEnterToContinue);
-    }
-
-  } while (enterToContinue !== 'c');
-
   let computerChoice = computerChooses();
 
   prompt(`You chose ${choiceToWord(choice)}, computer chose ${choiceToWord(computerChoice)}`);
 
   determineWinner(choice, computerChoice);
-
-  do {
-    prompt(MESSAGE.enterToContinue);
-    enterToContinue = rlsync.question().toLowerCase();
-
-    if (enterToContinue !== 'c') {
-      prompt(MESSAGE.invalidEnterToContinue);
-    }
-
-  } while (enterToContinue !== 'c');
 
   let answer;
   do {
@@ -97,3 +76,5 @@ while (true) {
 
   console.clear();
 }
+
+prompt(MESSAGE.goodbye);
