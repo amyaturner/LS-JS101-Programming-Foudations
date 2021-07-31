@@ -3,6 +3,11 @@
   "askForChoice" : "Choose one: Enter 'r' for rock, 'p' for paper, 'sc' for scissors, 'sp, for spock, or 'l' for lizard.",
   "notValidChoice" : "Oops. That's not a valid choice.",
   "askToContinueRound" : "Continue this round (y/n)?",
+  "youWin" : "You win!\n",
+  "computerWins" : "Computer wins!\n",
+  "tie" : "It's a tie!\n",
+  "userIsGrandWinner" : "You are the Grand Winner of this round!\n",
+  "computerIsGrandWinner" : "The Computer is the Grand Winner of this round!\n",
   "askPlayAnotherRound" : "Do you want to play another round (y/n)?",
   "invalidContinue" : "Oops. Please enter 'y' or 'n'.",
   "goodbye" : "Thank you for playing! Goodbye.\n"
