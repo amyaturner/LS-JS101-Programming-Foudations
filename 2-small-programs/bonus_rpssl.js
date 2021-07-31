@@ -14,7 +14,7 @@ function prompt(message) {
 }
 
 let word;
-function choiceToWord(choice) {
+function translate(choice) {
   switch (choice) {
     case 'r':
       word = 'rock';
@@ -43,6 +43,10 @@ function computerChooses() {
   return computerChoice;
 }
 
+function displayChoices(choice, computerChoice) {
+  prompt(`You chose ${translate(choice)}, Computer chose ${translate(computerChoice)}`);
+}
+
 function determineWinner(choice, computerChoice) {
   if (playerWins(choice, computerChoice)) {
     return 'user';
@@ -59,11 +63,11 @@ function playerWins(choice, computerChoice) {
 
 function displayWinnerMessage(winner) {
   if (winner === 'user') {
-    console.log('You win!\n');
+    console.log(MESSAGE.youWin);
   } else if (winner === 'computer') {
-    console.log('Computer wins!\n');
+    console.log(MESSAGE.computerWins);
   } else {
-    console.log("It's a tie!\n");
+    console.log(MESSAGE.tie);
   }
 }
 
@@ -78,15 +82,15 @@ function updateScore(winner) {
 }
 
 function displayScore() {
-  console.log(`Your score: ${userScore}`);
-  console.log(`Computer score: ${computerScore}\n`);
+  prompt(`Your score: ${userScore}`);
+  prompt(`Computer score: ${computerScore}\n`);
 }
 
 function displayGrandWinnerMessage() {
   if (userScore === 5) {
-    console.log('You are the Grand Winner of this round!\n');
+    prompt(MESSAGE.userIsGrandWinner);
   } else {
-    console.log('The Computer is the Grand Winner of this round!\n');
+    prompt(MESSAGE.computerIsGrandWinner);
   }
 }
 
@@ -110,7 +114,7 @@ while (true) {
 
     let computerChoice = computerChooses();
 
-    prompt(`You chose ${choiceToWord(choice)}, computer chose ${choiceToWord(computerChoice)}`);
+    displayChoices(choice, computerChoice);
 
     let winner = determineWinner(choice, computerChoice);
     displayWinnerMessage(winner);
