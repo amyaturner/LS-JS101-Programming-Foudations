@@ -1,0 +1,11 @@
+{
+  "welcome" : "\n=> Welcome to Calculator!\n\n=> This calculator asks you for two numbers, as well as a math operation to perform on those numbers (in the order given), and returns the result.\n",
+  "askForNum" : "Please enter a number:",
+  "invalidNum" : "That is not a number.",
+  "askForOperation" : "Please enter a letter for the operation you would like to perform on your two numbers:\n 'a' for 'addition',\n 's' for 'subtraction',\n 'm' for 'multiplicaton',\n 'd' for 'division'",
+  "invalidOperation" : "Sorry. Not able to perform that calculation.",
+  "result" : "Your result is ",
+  "startOver" : "Would you like to start again? Enter 'y' for Yes, 'n' for No",
+  "invalidStartOver" : "Oops. Please enter a valid input.",
+  "goodbye" : "Thank you for calculating! Goodbye.\n"
+}
